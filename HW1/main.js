@@ -1,4 +1,4 @@
-'use strict'; 
+// 'use strict'; 
 
 let money = +prompt("Ваш бюджет на месяц?", ""),
     time = prompt("Введите дату в формате YYYY-MM-DD", "");
@@ -15,7 +15,14 @@ let point1 = +prompt("Введите обязательную статью ра�
     point3 = +prompt("Введите обязательную статью расходов в этом месяце?", ""),
     point4 = +prompt("Во сколько обойдется?", "");
 
-appData.expenses.point1 = point2;
-appData.expenses.point3 = point4;
+alert("Ежедневный бюджет: " + appData.moneyPerDay);
 
-alert(appData.budget/30);
+if (appData.moneyPerDay < 100) {
+  console.log("Минимальный уроень достатка");
+} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+  console.log("Средний уроень достатка");
+} else if (appData.moneyPerDay > 2000) {
+  console.log("Высокий уроень достатка");
+} else {
+  console.log("Произошла ошибка");
+}
